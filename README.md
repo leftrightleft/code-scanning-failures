@@ -59,6 +59,30 @@ The script will output the following information for each repository:
 * Number of analyses with errors
 * Count of errors by category (if any)
 
+Example:
+   ```sh
+   Repository: burrito-party/DVWA
+   Total Analyses: 2
+   Analyses with Errors: 0
+
+   Repository: burrito-party/WebGoat
+   Total Analyses: 102
+   Analyses with Errors: 23
+   Error Counts by Category:
+   /language:java: 23
+
+   Repository: burrito-party/insecure-api - Advanced Security must be enabled for this repository to use code scanning.
+   Repository: burrito-party/advanced-security-go
+   Total Analyses: 63
+   Analyses with Errors: 0
+
+   Repository: burrito-party/sql-injections-python
+   Total Analyses: 92
+   Analyses with Errors: 2
+   Error Counts by Category:
+   /language:python: 2
+   ```
+
 ## Error Handling
 * The script handles GitHub API rate limiting by waiting for the rate limit to reset before retrying requests.
 * If a repository requires Advanced Security to be enabled, the script will print an error message and continue with the next repository.
